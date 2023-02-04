@@ -1,0 +1,40 @@
+.navWrapper {
+    width: 100%;
+    background-color: rgb(105, 105, 105);
+    height: 60px;
+
+    .navLink {
+        text-decoration: none;
+        margin: 10px;
+
+        button {
+            background-color: rgb(105, 105 ,105);
+            color: white;
+            height: 60px;
+            border-radius: 0px;
+            border: 0px;
+            font-size: 20px;
+            
+            &:hover {
+                background-color: rgb(155, 155, 155);
+                cursor: pointer;
+            }
+
+            &:active {
+                background-color: rgb(105, 105 ,105);
+            }
+        }
+    }
+
+    .searchBar {
+        float: right;
+
+        input {
+            position: relative;
+            top: 2px;
+            right: 2px;
+            height: 50px;
+            width: 300px;
+        }
+    }
+}
