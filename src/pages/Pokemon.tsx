@@ -77,10 +77,10 @@ const Pokemon = ({ obj, cart }: any) => {
   
             <div className='typeList' >
               <p>type:&nbsp;</p>
-              <p className='types'>{info.types[0].type.name}</p>
-              <p className='types'>{((info.types.length) >= 2 ? (info.types[1].type.name) : null)}</p>
-              <p className='types'>{((info.types.length) >= 3 ? (info.types[2].type.name) : null)}</p>
-              <p className='types'>{((info.types.length) >= 4 ? (info.types[3].type.name) : null)}</p>
+              <p className={info.types[0].type.name}>{info.types[0].type.name}</p>
+              <p className={((info.types.length) >= 2 ? (info.types[1].type.name) : null)}>{((info.types.length) >= 2 ? (info.types[1].type.name) : null)}</p>
+              <p className={((info.types.length) >= 3 ? (info.types[2].type.name) : null)}>{((info.types.length) >= 3 ? (info.types[2].type.name) : null)}</p>
+              <p className={((info.types.length) >= 4 ? (info.types[3].type.name) : null)}>{((info.types.length) >= 4 ? (info.types[3].type.name) : null)}</p>
             </div>
   
             <div className='typeList'>
@@ -88,6 +88,16 @@ const Pokemon = ({ obj, cart }: any) => {
               <p className='types'>{info.abilities[0].ability.name}</p>
               <p className='types'>{((info.abilities.length) >= 2 ? (info.abilities[1].ability.name) : null)}</p>
               <p className='types'>{((info.abilities.length) >= 3 ? (info.abilities[2].ability.name) : null)}</p>
+            </div>
+
+            <div className='typeList'>
+              <p>stats:&nbsp;</p>
+              <p className='types'>{info.stats[0].stat.name}: {info.stats[0].base_stat}</p>
+              <p className='types'>{info.stats[1].stat.name}: {info.stats[1].base_stat}</p>
+              <p className='types'>{info.stats[2].stat.name}: {info.stats[2].base_stat}</p>
+              <p className='types'>{info.stats[3].stat.name}: {info.stats[3].base_stat}</p>
+              <p className='types'>{info.stats[4].stat.name}: {info.stats[4].base_stat}</p>
+              <p className='types'>{info.stats[5].stat.name}: {info.stats[5].base_stat}</p>
             </div>
   
             <img className='sprite' src={info.sprites[spriteView]}></img>
@@ -106,9 +116,16 @@ const Pokemon = ({ obj, cart }: any) => {
       return (
           <div className='listWrapper'>
             <div className='divWrapper'>
+              <p className='index'>{info.id}</p>
               <span><img className='image' src={info.sprites.front_default}></img></span>
               <p className='name' onClick={handlePokeName} >{info.name}</p>
-              <p className='experience'>&nbsp;EXP&nbsp;{info.base_experience}&nbsp;</p>
+              <p className='experience'>{info.base_experience}&nbsp;</p>
+              <span className='type'>
+                <p className={info.types[0].type.name}>{info.types[0].type.name}</p>
+                <p className={((info.types.length) >= 2 ? (info.types[1].type.name) : null)}>{((info.types.length) >= 2 ? (info.types[1].type.name) : null)}</p>
+                <p className={((info.types.length) >= 3 ? (info.types[2].type.name) : null)}>{((info.types.length) >= 3 ? (info.types[2].type.name) : null)}</p>
+              </span>
+              
             </div>
             
           </div>

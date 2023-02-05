@@ -171,31 +171,41 @@ function Navigation() {
 
   return (
     <>
+      <header><Title /></header>
 
-      <header>
-        <Title />
-      </header>
+      <nav><NavBar /></nav>
 
-      <nav>
-        <NavBar />
-      </nav>
+    <main>
+      <div className='navigationButtonsWrap'>
 
-    <div className='navigation'>
+        <div className='pageLinesWrap'>
+          <button className='pageLinesBtn' onClick={handlePageLines}>{lines}</button>
+        </div>
 
-      <button onClick={handlePageLines}>{lines}</button>
+        <Cart props={cc} />
 
-      <Cart props={cc} />
+        <div className='navigationWrap'>
+          <button className='prevNextBtn' onClick={handlePreviousPage} disabled={offset.initial===0}>Prev</button>
+          <button className={buttonStyle.one} onClick={handlePageNumber}>{navigation.one}</button>
+          <button className={buttonStyle.two} onClick={handlePageNumber}>{navigation.two}</button>
+          <button className={buttonStyle.three} onClick={handlePageNumber}>{navigation.three}</button>
+          <button className={buttonStyle.four} onClick={handlePageNumber}>{navigation.four}</button>
+          <button className={buttonStyle.five} onClick={handlePageNumber}>{navigation.five}</button>
+          <button className={buttonStyle.six} onClick={handlePageNumber}>{navigation.six}</button>
+          <button className={buttonStyle.last} onClick={handlePageNumber}>{navigation.last}</button>
+          <button className='prevNextBtn' onClick={handleNextPage} disabled={(offset.initial/offset.lines) === (navigation.last - 1)} >Next</button>
+        </div>
 
-      <div className='navigationWrap'>
-        <button className='prevNextBtn' onClick={handlePreviousPage} disabled={offset.initial===0}>Prev</button>
-        <button className={buttonStyle.one} onClick={handlePageNumber}>{navigation.one}</button>
-        <button className={buttonStyle.two} onClick={handlePageNumber}>{navigation.two}</button>
-        <button className={buttonStyle.three} onClick={handlePageNumber}>{navigation.three}</button>
-        <button className={buttonStyle.four} onClick={handlePageNumber}>{navigation.four}</button>
-        <button className={buttonStyle.five} onClick={handlePageNumber}>{navigation.five}</button>
-        <button className={buttonStyle.six} onClick={handlePageNumber}>{navigation.six}</button>
-        <button className={buttonStyle.last} onClick={handlePageNumber}>{navigation.last}</button>
-        <button className='prevNextBtn' onClick={handleNextPage} disabled={(offset.initial/offset.lines) === (navigation.last - 1)} >Next</button>
+      </div>
+      
+      <div className='listWrapper' id='listDescription'>
+        <div className='divWrapper'>
+          <p className='index'>index</p>
+          <p className='image'>sprite</p>
+          <p className='name'>name</p>
+          <p className='experience'>experience</p>
+          <p className='type'>type</p>
+        </div>
       </div>
 
       {list.map((item: any) => {
@@ -203,7 +213,7 @@ function Navigation() {
         return result;
       })}
       
-    </div>
+    </main>
     </>
   )
 }
