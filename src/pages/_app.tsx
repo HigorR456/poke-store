@@ -7,6 +7,13 @@ import '../styles/cart.scss';
 import '../styles/Title.scss';
 import '../styles/NavBar.scss';
 
+import { store } from '../app/store';
+import { Provider } from 'react-redux';
+
 export default function App({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
+  return (
+    <Provider store={store}>
+      <Component {...pageProps} />
+    </Provider>
+  )
 }

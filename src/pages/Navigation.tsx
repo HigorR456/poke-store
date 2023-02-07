@@ -3,6 +3,7 @@ import Cart from '../components/Cart'
 import Pokemon from './Pokemon'
 import Title from '../components/Title'
 import NavBar from '../components/NavBar'
+import MyCart from './MyCart'
 
 
 function Navigation() {
@@ -161,14 +162,14 @@ function Navigation() {
           last: (offset.initial/offset.lines === (Math.ceil(data.count/offset.lines))? 'currentBtn' : 'navigationBtn')
         })
       }
-      console.log({cc})
+      console.log(cc)
     });
     console.log(offset.initial/offset.lines)
   }, [offset]);
 
   const [cc, setCc]:any = useState([])
 
-
+  
   return (
     <>
       <header><Title /></header>

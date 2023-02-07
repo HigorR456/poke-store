@@ -56,7 +56,7 @@ const Pokemon = ({ obj, cart }: any) => {
         //console.log({obj})
         cartArray.push(obj);
         cartArray = [...cartArray];
-        console.log({cartArray})
+        //console.log({cartArray})
         //console.log(cartArray)
         //cartCount += 1;
         cart(cartArray);

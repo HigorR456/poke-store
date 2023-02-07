@@ -16,7 +16,7 @@ const MyCart = () => {
 
             <nav><NavBar /></nav>
 
-            <Cart props={propsArray} mycartProps={setPropsArray}/>
+            
 
              <h2>My Cart Page</h2>
             <p>

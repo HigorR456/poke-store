@@ -1,8 +1,10 @@
-import Head from 'next/head'
-import styles from '@/styles/Home.module.css'
-import Link from 'next/link'
-import Title from '../components/Title'
-import NavBar from '../components/NavBar'
+import Head from 'next/head';
+import styles from '@/styles/Home.module.css';
+import Link from 'next/link';
+import Title from '../components/Title';
+import NavBar from '../components/NavBar';
+
+import Counter from '../features/counter/Counter'
 
 
 export default function Home() {
@@ -22,11 +24,12 @@ export default function Home() {
         <NavBar />
       </nav>
 
-      <main className={styles.main}>
+        <main className={styles.main}>
+          
+          <Counter />
+          <p>This is the main</p>
         
-        <p>This is the main</p>
-      
-      </main>
+        </main>
     </>
   )
 }
