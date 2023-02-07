@@ -166,7 +166,7 @@ function Navigation() {
     console.log(offset.initial/offset.lines)
   }, [offset]);
 
-  const [cc, setCc]:any = useState(0)
+  const [cc, setCc]:any = useState([])
 
 
   return (

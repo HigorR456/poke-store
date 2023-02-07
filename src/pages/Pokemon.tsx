@@ -1,6 +1,9 @@
 import { useState, useEffect } from 'react'
 import Link from "next/link"
 
+let cartCount = 0;
+let cartArray: any = [];
+
 const Pokemon = ({ obj, cart }: any) => {
     
     obj = obj.name;
@@ -11,7 +14,6 @@ const Pokemon = ({ obj, cart }: any) => {
     const [seeArtwork, setSeeArtwork]: any = useState(null);
     const [infoWrapper, setInfoWrapper]: any = useState({opacity: '0.2'});
     const [goBackToInfo, setGoBackToInfo]: any = useState(true);
-    const [cartCount, setCartCount]: any = useState(0);
 
   
     useEffect(() => {
@@ -51,9 +53,13 @@ const Pokemon = ({ obj, cart }: any) => {
       }
   
       const handleAddToCart = () => {
-        console.log(cart)
-        setCartCount(cartCount+1);
-        cart(cartCount+1);
+        //console.log({obj})
+        cartArray.push(obj);
+        cartArray = [...cartArray];
+        console.log({cartArray})
+        //console.log(cartArray)
+        //cartCount += 1;
+        cart(cartArray);
       }
   
   
@@ -104,6 +110,7 @@ const Pokemon = ({ obj, cart }: any) => {
             
             <button className='viewBtn' onClick={handleView}>Change view</button>
             <button className='artBtn' onClick={handleArtwork} >See artwork</button>
+            
             <button className='addToCart' onClick={handleAddToCart} >Add to cart</button>
   
           </div>

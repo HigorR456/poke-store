@@ -1,13 +1,22 @@
 import React from 'react';
+import { useState } from 'react';
 import Title from '../components/Title'
 import NavBar from '../components/NavBar'
+import Cart from '../components/Cart'
+
 
 const MyCart = () => {
+
+    const [propsArray, setPropsArray]: any = useState([]);
+    console.log(propsArray, 'mycart')
+
     return (
         <>
             <header><Title /></header>
 
             <nav><NavBar /></nav>
+
+            <Cart props={propsArray} mycartProps={setPropsArray}/>
 
              <h2>My Cart Page</h2>
             <p>
