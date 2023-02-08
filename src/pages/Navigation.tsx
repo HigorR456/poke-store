@@ -3,8 +3,6 @@ import Cart from '../components/Cart'
 import Pokemon from './Pokemon'
 import Title from '../components/Title'
 import NavBar from '../components/NavBar'
-import MyCart from './MyCart'
-
 
 function Navigation() {
 
@@ -162,12 +160,9 @@ function Navigation() {
           last: (offset.initial/offset.lines === (Math.ceil(data.count/offset.lines))? 'currentBtn' : 'navigationBtn')
         })
       }
-      console.log(cc)
     });
     console.log(offset.initial/offset.lines)
   }, [offset]);
-
-  const [cc, setCc]:any = useState([])
 
   
   return (
@@ -183,7 +178,7 @@ function Navigation() {
           <button className='pageLinesBtn' onClick={handlePageLines}>{lines}</button>
         </div>
 
-        <Cart props={cc} />
+        <Cart />
 
         <div className='navigationWrap'>
           <button className='prevNextBtn' onClick={handlePreviousPage} disabled={offset.initial===0}>Prev</button>
@@ -201,16 +196,17 @@ function Navigation() {
       
       <div className='listWrapper' id='listDescription'>
         <div className='divWrapper'>
-          <p className='index'>index</p>
-          <p className='image'>sprite</p>
-          <p className='name'>name</p>
-          <p className='experience'>experience</p>
-          <p className='type'>type</p>
+          <p className='index' id='listHeader'>index</p>
+          <p className='image' id='listHeader'>sprite</p>
+          <p className='name' id='listHeader'>name</p>
+          <p className='experience' id='listHeader'>experience</p>
+          <p className='type' id='listHeader'>type</p>
+          <p className='price' id='listHeader'>price</p>
         </div>
       </div>
 
       {list.map((item: any) => {
-        const result = <Pokemon cart={setCc} key={item.name} obj={item} />;
+        const result = <Pokemon key={item.name} obj={item} />;
         return result;
       })}
       

@@ -1,8 +1,8 @@
-import { useState, useEffect } from 'react'
-import Link from "next/link"
+import { useState, useEffect } from 'react';
+import Link from "next/link";
 
-let cartCount = 0;
-let cartArray: any = [];
+import { useSelector, useDispatch } from 'react-redux';
+import { increment, reset } from '../features/cartSlice';
 
 const Pokemon = ({ obj, cart }: any) => {
     
@@ -51,15 +51,11 @@ const Pokemon = ({ obj, cart }: any) => {
           setInfoWrapper({opacity: '0.2'})
           setGoBackToInfo(true)
       }
-  
+      
+      const dispatch = useDispatch();
+
       const handleAddToCart = () => {
-        //console.log({obj})
-        cartArray.push(obj);
-        cartArray = [...cartArray];
-        //console.log({cartArray})
-        //console.log(cartArray)
-        //cartCount += 1;
-        cart(cartArray);
+        dispatch(increment(info));
       }
   
   
@@ -112,11 +108,10 @@ const Pokemon = ({ obj, cart }: any) => {
             <button className='artBtn' onClick={handleArtwork} >See artwork</button>
             
             <button className='addToCart' onClick={handleAddToCart} >Add to cart</button>
+            <p className='detailsPrice'>${(info.base_experience / 20) + 20}</p>
   
           </div>
-  
-          
-  
+
         </div>
       )
     } else {
@@ -132,6 +127,7 @@ const Pokemon = ({ obj, cart }: any) => {
                 <p className={((info.types.length) >= 2 ? (info.types[1].type.name) : null)}>{((info.types.length) >= 2 ? (info.types[1].type.name) : null)}</p>
                 <p className={((info.types.length) >= 3 ? (info.types[2].type.name) : null)}>{((info.types.length) >= 3 ? (info.types[2].type.name) : null)}</p>
               </span>
+              <p className='price'>${(info.base_experience / 20) + 20}</p>
               
             </div>
             

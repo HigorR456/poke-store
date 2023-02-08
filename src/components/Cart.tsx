@@ -4,33 +4,26 @@ import Link from 'next/link';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faCartShopping} from '@fortawesome/free-solid-svg-icons';
 
-let propsArray: any = [];
-let hey = [];
+import { useSelector, useDispatch } from 'react-redux';
+import { increment, reset } from '../features/cartSlice';
 
-const Cart = ({ props }: any) => {
-    //const [propsArray, setPropsArray]: any = useState([]);
-        //setPropsArray(props);
-        //propsArray = props;
-        console.log(propsArray)
-        hey = props;
-        //const count: any = {};
-        //['a', 'a', 'b', 'c','c','c'].forEach((x: any) => { count[x] = (count[x] || 0) + 1; });
-        //console.log({count})
 
-        const handleMyCart = () => {
-            props(propsArray);
-        }
+const Cart = () => {
+
+    const count = useSelector((state: any) => state.counter);
+
+    //['a', 'a', 'b', 'c','c','c'].forEach((x: any) => { count[x] = (count[x] || 0) + 1; });
+
+
 
     return (
         <div className='cartWrapper'>
-            <Link href="./Asda" >
-                <button className='cartButton' onClick={handleMyCart}>
+            <Link href="./MyCart" className='cartLink'>
                     <FontAwesomeIcon icon={faCartShopping}/>
-                    <p className='itemQty'>{props.length}</p>
-                </button>
+                    <div className={count.length > 0 ? 'circleQty' : 'hide'}>
+                        <p className='itemQty'>{count.length}</p>
+                    </div>
             </Link>
-                
-            
         </div>
     );
 };

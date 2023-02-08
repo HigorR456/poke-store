@@ -1,0 +1,50 @@
+.listItemWrap {
+
+    #cartListHeader {
+        grid-template-rows: 50px;
+        line-height: 50px;
+        height: 50px;
+
+        p { line-height: 20px; }
+        
+        * {
+            height: 50px;
+        }
+    }
+
+    .listContent {
+        display: grid;
+        grid-template-columns: 20fr 20fr 20fr 20fr 20fr;
+        grid-template-rows: 120px;
+        border: 1px solid rgb(50, 50, 50);
+
+        .cartContentImg {
+            border: 1px solid rgb(50, 50, 50);
+        }
+
+        .cartContentText {
+            border: 1px solid rgb(50, 50, 50);
+            line-height: 6px;
+            text-align: left;
+            p { margin-left: 10px; }
+        }
+
+        .cartContentPrice {
+            border: 1px solid rgb(50, 50, 50);
+            height: 120px;
+            line-height: 90px;
+        }
+        
+        .cartContentQty {
+            border: 1px solid rgb(50, 50, 50);
+            height: 120px;
+            line-height: 90px;
+        }
+
+        .cartContentFullPrice {
+            border: 1px solid rgb(50, 50, 50);
+            height: 120px;
+            line-height: 90px;
+        }
+    }
+}

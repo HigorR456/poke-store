@@ -3,9 +3,10 @@ import type { AppProps } from 'next/app';
 
 import '../styles/Navigation.scss';
 import '../styles/Pokemon.scss';
-import '../styles/cart.scss';
+import '../styles/Cart.scss';
 import '../styles/Title.scss';
 import '../styles/NavBar.scss';
+import '../styles/MyCart.scss';
 
 import { store } from '../app/store';
 import { Provider } from 'react-redux';
