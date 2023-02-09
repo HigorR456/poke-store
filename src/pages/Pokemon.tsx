@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useSelector, useDispatch } from 'react-redux';
 import { increment, reset } from '../features/cartSlice';
 
-const Pokemon = ({ obj, cart }: any) => {
+const Pokemon = ({ obj }: any) => {
     
     obj = obj.name;
   

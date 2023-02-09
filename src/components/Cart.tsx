@@ -12,6 +12,7 @@ const Cart = () => {
 
     const count = useSelector((state: any) => state.counter);
 
+    //let count: any = {};
     //['a', 'a', 'b', 'c','c','c'].forEach((x: any) => { count[x] = (count[x] || 0) + 1; });
 
 

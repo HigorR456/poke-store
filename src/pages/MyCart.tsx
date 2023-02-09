@@ -1,5 +1,5 @@
 import React from 'react';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Title from '../components/Title';
 import NavBar from '../components/NavBar';
 import Cart from '../components/Cart';
@@ -11,6 +11,41 @@ import { increment, reset } from '../features/cartSlice';
 const MyCart = () => {
 
     const cartInfo = useSelector((state: any) => state.counter);
+    const [cartDisplay, setCartDisplay]: any = useState({
+        filteredInfo: [],
+        quantity: []
+    })
+
+    
+    
+
+    useEffect(() => {
+        let count: any = {};
+
+        //filteredInfo
+        const ids = cartInfo.map((o: any) => o.id);
+        const filtered = cartInfo.filter(({id}: any, index: any) => !ids.includes(id, index + 1));
+        console.log(filtered);
+
+        //quantity
+        cartInfo.forEach((x: any) => { 
+            count[x.name] = (count[x.name] || 0) + 1;
+        });
+        console.log(count);
+
+
+        setCartDisplay({
+            filteredInfo: [...filtered],
+            quantity: count
+        });
+        console.log(cartDisplay);
+    }, [])
+
+    const handleTest = () => {
+        console.log(cartDisplay);
+    }
+
+    
 
     return (
         <>
@@ -19,6 +54,8 @@ const MyCart = () => {
             <nav><NavBar /></nav>
 
             <main>
+                <button onClick={handleTest}>Click here</button>
+
                 <Cart />
 
                 <h2>My Cart Page</h2>
@@ -47,7 +84,7 @@ const MyCart = () => {
                         </div>
                     </tr>
 
-                {cartInfo.map((item: any) => {
+                {cartDisplay.filteredInfo.map((item: any) => {
                     const result = 
                     <tr className='listItemWrap'>
                         <div className='listContent'>
@@ -63,15 +100,15 @@ const MyCart = () => {
                             </div>
 
                             <div className='cartContentPrice'>
-                                <p>${(item.base_experience / 20)+ 20}</p>
+                                <p>${((item.base_experience / 20)+ 20).toFixed(2)}</p>
                             </div>
 
                             <div className='cartContentQty'>
-                                <p>Qty</p>
+                                <p>{cartDisplay.quantity[item.name]}</p>
                             </div>
 
                             <div className='cartContentFullPrice'>
-                                <p>total qty x price</p>
+                                <p>${((cartDisplay.quantity[item.name]) * ((item.base_experience / 20)+ 20)).toFixed(2)}</p>
                             </div>
                         </div>
                     </tr>
