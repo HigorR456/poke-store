@@ -5,30 +5,43 @@ import NavBar from '../components/NavBar';
 import Cart from '../components/Cart';
 
 import { useSelector, useDispatch } from 'react-redux';
-import { assignArr, increment, decrement, reset } from '../features/cartSlice';
+import { assignArr, increment, decrement, removeArr, reset } from '../features/cartSlice';
 
 const MyCart = () => {
 
     const cartInfo = useSelector((state: any) => state.counter);
     const [total, setTotal]: any = useState(0);
-    
     const dispatch = useDispatch();
 
-
+    //subtract item quantity
     const handleSub = (e: any) => {
         const name = (e.target.parentElement.parentElement.parentElement.querySelector('.cartContentProduct').querySelector('div').querySelector('div').textContent);
 
         dispatch(decrement(name));
     }
 
+    //add item quantity
     const handleAdd = (e: any) => {
         const name = (e.target.parentElement.parentElement.parentElement.querySelector('.cartContentProduct').querySelector('div').querySelector('div').textContent);
 
         dispatch(increment(name));
     }
 
+    //remove the item
+    const handleDel = (e: any) => {
+        const name = (e.target.parentElement.parentElement.querySelector('.cartContentProduct').querySelector('div').querySelector('div').textContent);
+
+        dispatch(removeArr(name));
+    }
+
+    //total sum
     useEffect(() => {
-    }, [])
+        let sum = 0;
+        cartInfo.map((e:any) => {
+            sum += (e.quantity * ((e.base_experience/20) + 20));
+        });
+        setTotal(sum);
+    }, [cartInfo])
 
     
 
@@ -62,7 +75,7 @@ const MyCart = () => {
                                     <img src={item.sprites.front_default}></img>
                                     <div>
                                         <div style={{fontWeight: 'bold'}}>{item.name}</div>
-                                        <div>EXP {item.base_experience}</div>
+                                        <div>EXP&nbsp;{item.base_experience}</div>
                                         <div>{item.types[0].type.name}</div>
                                         <div>{((item.types.length) >= 2 ? (item.types[1].type.name) : null)}</div>
                                     </div>
@@ -85,7 +98,7 @@ const MyCart = () => {
                                 </td>
 
                                 <td className='cartDeleteItem'>
-                                    <button className='deleteItem'>X</button>
+                                    <button className='deleteItem' onClick={handleDel} key={item.name}>X</button>
                                 </td>
                         </tr>
 

@@ -28,7 +28,6 @@ export const cartSlice = createSlice({
                     e.quantity++;
                 } 
             });
-
         },
         decrement: (state, action) => {
             state.map((e:any) => {
@@ -37,12 +36,19 @@ export const cartSlice = createSlice({
                 }
             });
         },
+        removeArr: (state, action) => {
+            state.map((e:any) => {
+                if (e.name === action.payload) {
+                    state.splice((state.indexOf(e)), 1)
+                }
+            })
+        },
         reset: (state) => {
             state = []
         }
     }
 });
 
-export const { assignArr, increment, decrement, reset } = cartSlice.actions;
+export const { assignArr, increment, decrement, removeArr, reset } = cartSlice.actions;
 
 export default cartSlice.reducer;
