@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import Link from "next/link";
 
 import { useSelector, useDispatch } from 'react-redux';
-import { increment, reset } from '../features/cartSlice';
+import { assignArr, increment, decrement, reset } from '../features/cartSlice';
 
 const Pokemon = ({ obj }: any) => {
     
@@ -20,6 +20,7 @@ const Pokemon = ({ obj }: any) => {
       fetch(`https://pokeapi.co/api/v2/pokemon/${obj}`)
       .then((res) => res.json())
       .then((data) => {
+        Object.assign({data, quantity: 1});
         setInfo(data);
       })}, []);
   
@@ -55,7 +56,14 @@ const Pokemon = ({ obj }: any) => {
       const dispatch = useDispatch();
 
       const handleAddToCart = () => {
-        dispatch(increment(info));
+        if (info.quantity != undefined) {
+          dispatch(assignArr(info));
+        } else {
+          (Object.assign(info, {quantity: 1}));
+          dispatch(assignArr(info));
+        }
+
+        console.log({info})
       }
   
   
@@ -63,10 +71,11 @@ const Pokemon = ({ obj }: any) => {
       return <div className='divWrapper'>-</div>
     } else if (details !== null) {
       return (
+        //details
         <div className='detailsWrapper'>
-  
-        <img className='artwork' style={infoWrapper} src={info.sprites.other['official-artwork'].front_default}></img>
-        <button className='backToInfoBtn' hidden={goBackToInfo} onClick={handleGoBackToInfo}>Return</button>
+          
+          <img className='artwork' style={infoWrapper} src={info.sprites.other['official-artwork'].front_default}></img>
+          <button className='backToInfoBtn' hidden={goBackToInfo} onClick={handleGoBackToInfo}>Return</button>
   
           <div className='infoWrapper' style={seeArtwork}>
   
@@ -108,7 +117,7 @@ const Pokemon = ({ obj }: any) => {
             <button className='artBtn' onClick={handleArtwork} >See artwork</button>
             
             <button className='addToCart' onClick={handleAddToCart} >Add to cart</button>
-            <p className='detailsPrice'>${(info.base_experience / 20) + 20}</p>
+            <p className='detailsPrice'>${((info.base_experience / 20) + 20).toFixed(2)}</p>
   
           </div>
 
@@ -116,6 +125,7 @@ const Pokemon = ({ obj }: any) => {
       )
     } else {
       return (
+        //list
           <div className='listWrapper'>
             <div className='divWrapper'>
               <p className='index'>{info.id}</p>
@@ -127,7 +137,7 @@ const Pokemon = ({ obj }: any) => {
                 <p className={((info.types.length) >= 2 ? (info.types[1].type.name) : null)}>{((info.types.length) >= 2 ? (info.types[1].type.name) : null)}</p>
                 <p className={((info.types.length) >= 3 ? (info.types[2].type.name) : null)}>{((info.types.length) >= 3 ? (info.types[2].type.name) : null)}</p>
               </span>
-              <p className='price'>${(info.base_experience / 20) + 20}</p>
+              <p className='price'>${((info.base_experience / 20) + 20).toFixed(2)}</p>
               
             </div>
             

@@ -83,14 +83,14 @@
   
 //details of pokemon
   .detailsWrapper {
-    position: relative;
     top: 50%;
-    left: 10%;
-    translate: -10% -0%;
-    text-align: left;
+    left: 50%;
+    transform: translate( -50% -50% );
+    text-align: center;
     height: 300px;
     display: flex;
     justify-content: center;
+    align-items: center;
 
     p {
       background-color: rgba(0, 0, 0, 0.6);
@@ -101,23 +101,21 @@
     }
 
     .artwork {
-      margin-left: 10%;
+      position: absolute;
       height: 290px;
     }
 
     .backToInfoBtn {
-      position: absolute;
-      bottom: 10%;
-      left: 0%;
+      position: relative;
+      right: 180px;
+      top: 80px;
       height: 42px;
     }
 
     .infoWrapper {
+      position: relative;
       text-align: left;
-      position: absolute;
-      top: 10%;
-      left: 0%;
-
+  
       .returnButton {
         height: 42px;
       }
@@ -151,7 +149,7 @@
       }
 
       .sprite {
-        position: fixed;
+        position: absolute;
         left: 250px;
         bottom: 60%;
       }

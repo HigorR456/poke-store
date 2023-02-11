@@ -26,17 +26,20 @@
     }
 
     .circleQty {
-        width: 18px;
-        height: 18px;
+        width: 24px;
+        height: 24px;
         border-radius: 100%;
         position: relative;
-        top: -60px;
-        left: 32px;
+        top: -45px;
+        left: 30px;
         background: rgb(50, 250, 50);
+        justify-content: center;
+        align-items: center;
+        display: flex;
         
 
         .itemQty {
-            font-size: 18px;
+            font-size: 16px;
             font-weight: bold;
             color: black;
         }

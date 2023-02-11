@@ -6,8 +6,36 @@ export const cartSlice = createSlice({
     name: 'cart',
     initialState,
     reducers: {
+        assignArr: (state, action) => {
+            if (state.length === 0) {
+                state.push(action.payload);
+            } else {
+                let i = 0;
+                (state.map((e:any) => {
+                    if (e.name === action.payload.name) {
+                        e.quantity++;
+                        i++;
+                    } else {
+                        return i
+                    }
+                }));
+                (i === 0 ? state.push(action.payload) : console.log('no'))
+            }
+        },
         increment: (state, action) => {
-            state.push(action.payload);
+            state.map((e:any) => {
+                if (e.name === action.payload) {
+                    e.quantity++;
+                } 
+            });
+
+        },
+        decrement: (state, action) => {
+            state.map((e:any) => {
+                if (e.name === action.payload) {
+                    e.quantity--;
+                }
+            });
         },
         reset: (state) => {
             state = []
@@ -15,6 +43,6 @@ export const cartSlice = createSlice({
     }
 });
 
-export const { increment, reset } = cartSlice.actions;
+export const { assignArr, increment, decrement, reset } = cartSlice.actions;
 
 export default cartSlice.reducer;
