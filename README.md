@@ -1,3 +1,44 @@
+# Poke-Store
+
+This is a Pokemon Store personal project, made using the free pokeapi (https://pokeapi.co/).
+
+The purpose of this project is to create the most realistic store possible, with the most functionalities as possible.
+
+This project is made with React JS, Next.js and Redux. The style has being made with Sass and some icons from FontsAwesome.
+
+Below you can see the progress and what functionalities are working:
+
+## Home-Page
+All navbar features are working unless the Search Input, both 'Pokemon List' and 'See All Pokemon' lead to the same path.
+
+![image](https://user-images.githubusercontent.com/109878939/218279101-c2f9ace6-8094-4d2b-bc77-a2a2ebc53c0a.png)
+
+## Navigation-Page
+This page shows all the pokemons, you can navigate between pages through the navigation buttons.
+
+When you click any pokemon name, its details are shown.
+
+![image](https://user-images.githubusercontent.com/109878939/218279166-84342353-ce07-430e-9576-c4b3edc08923.png)
+![image](https://user-images.githubusercontent.com/109878939/218279700-a9922c1d-b0c0-44ef-b81b-69a75439ae38.png)
+
+## Navigation-Page details
+You can add the pokemon to your cart, see its artwork and see its artwork or toggle the sprite between front and back.
+
+When you add any pokemon to your cart the cart icon starts counting.
+
+![image](https://user-images.githubusercontent.com/109878939/218279373-e054e1e1-b4f0-4307-b0c1-884cdd72e664.png)
+![image](https://user-images.githubusercontent.com/109878939/218279395-8a38ecc1-1a2b-48bd-9e74-d7fa683c3549.png)
+
+## MyCart-Page
+In this page all pokemon added to cart are shown, you can change quantity and remove any pokemon you want.
+
+![image](https://user-images.githubusercontent.com/109878939/218279446-88a91372-8325-4358-921f-363410990582.png)
+![image](https://user-images.githubusercontent.com/109878939/218279549-7081e3ee-0d10-40f3-ae25-1a990709f71a.png)
+
+_______________________________________________________________________________________________________________
+
+
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
