@@ -9,7 +9,7 @@ import { assignArr, increment, decrement, removeArr, reset } from '../features/c
 
 const MyCart = () => {
 
-    const cartInfo = useSelector((state: any) => state.counter);
+    const cartInfo = useSelector((state: any) => state.cart);
     const [total, setTotal]: any = useState(0);
     const dispatch = useDispatch();
 

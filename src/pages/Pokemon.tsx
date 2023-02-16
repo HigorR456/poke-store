@@ -90,8 +90,6 @@ const Pokemon = ({ obj }: any) => {
               <p>type:&nbsp;</p>
               <p className={info.types[0].type.name}>{info.types[0].type.name}</p>
               <p className={((info.types.length) >= 2 ? (info.types[1].type.name) : null)}>{((info.types.length) >= 2 ? (info.types[1].type.name) : null)}</p>
-              <p className={((info.types.length) >= 3 ? (info.types[2].type.name) : null)}>{((info.types.length) >= 3 ? (info.types[2].type.name) : null)}</p>
-              <p className={((info.types.length) >= 4 ? (info.types[3].type.name) : null)}>{((info.types.length) >= 4 ? (info.types[3].type.name) : null)}</p>
             </div>
   
             <div className='typeList'>

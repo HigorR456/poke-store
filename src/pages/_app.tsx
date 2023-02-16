@@ -8,6 +8,7 @@ import '../styles/Title.scss';
 import '../styles/NavBar.scss';
 import '../styles/MyCart.scss';
 import '../styles/indexHome.scss';
+import '../styles/Item.scss';
 
 import { store } from '../app/store';
 import { Provider } from 'react-redux';

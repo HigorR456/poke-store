@@ -10,7 +10,7 @@ import { assignArr, increment, decrement, reset } from '../features/cartSlice';
 
 const Cart = () => {
 
-    const count = useSelector((state: any) => state.counter);
+    const count = useSelector((state: any) => state.cart);
     const [countTotal, setCountTotal]: any = useState(0);
 
 
