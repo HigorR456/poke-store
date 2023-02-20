@@ -1,24 +1,28 @@
 
 .cartWrapper {
-    position: absolute;
-    right: 50px;
-    cursor: pointer;
+    width: 60px;
+    margin: 4px;
+    height: 52px;
+    
+    &:hover {
+        background: rgb(140, 140, 140);
+        background: linear-gradient(180deg, rgb(140, 140, 140) 0%, rgb(70, 70, 70) 100%);
+        width: 60px;
+        margin: 4px;
+        height: 52px;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+    
+    &:active {
+        background: rgb(105, 105 ,105);
+    }
 
     .fa-cart-shopping {
+        margin-top: 18%;
+        margin-inline: 10px;
         height: 30px;
         color: white;
-    }
-
-    &:hover {
-        .fa-cart-shopping {
-            color: rgb(50, 250, 50)
-        }
-    }
-
-    &:active {
-        .fa-cart-shopping {
-            color: white;
-        }
     }
 
     .cartLink {
@@ -32,7 +36,7 @@
         position: relative;
         top: -45px;
         left: 30px;
-        background: rgb(50, 250, 50);
+        background: rgb(50, 50, 50);
         justify-content: center;
         align-items: center;
         display: flex;
@@ -41,7 +45,7 @@
         .itemQty {
             font-size: 16px;
             font-weight: bold;
-            color: black;
+            color: white
         }
     }
 

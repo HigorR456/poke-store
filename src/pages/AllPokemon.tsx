@@ -1,9 +1,9 @@
 import { useState, useEffect } from 'react'
-import PokemonList from './PokemonList'
+import PokemonBox from './PokemonBox'
 import Title from '../components/Title'
 import NavBar from '../components/NavBar'
 
-function Navigation() {
+function AllPokemon() {
 
   const [list, setList]: any = useState([]);
   const [lines, setLines]: any = useState('Show 20 lines');
@@ -171,11 +171,21 @@ function Navigation() {
       <nav><NavBar /></nav>
 
     <main>
-      <div className='navigationButtonsWrap'>
 
-        <div className='pageLinesWrap'>
-          <button className='pageLinesBtn' onClick={handlePageLines}>{lines}</button>
-        </div>
+    <div className='navigationButtonsWrap'>
+      <div className='pageLinesWrap'>
+            <button className='pageLinesBtn' onClick={handlePageLines}>{lines}</button>
+      </div>
+    </div>
+
+    <div className='allPokemon'>
+    {list.map((item: any) => {
+        const result = <PokemonBox key={item.name} obj={item} />;
+        return result;
+      })}
+    </div>
+
+      <div className='navigationButtonsWrap'>
 
         <div className='navigationWrap'>
           <button className='prevNextBtn' onClick={handlePreviousPage} disabled={offset.initial===0}>Prev</button>
@@ -191,25 +201,9 @@ function Navigation() {
 
       </div>
       
-      <div className='listWrapper' id='listDescription'>
-        <div className='divWrapper'>
-          <p className='index' id='listHeader'>index</p>
-          <p className='image' id='listHeader'>sprite</p>
-          <p className='name' id='listHeader'>name</p>
-          <p className='experience' id='listHeader'>experience</p>
-          <p className='type' id='listHeader'>type</p>
-          <p className='price' id='listHeader'>price</p>
-        </div>
-      </div>
-
-      {list.map((item: any) => {
-        const result = <PokemonList key={item.name} obj={item} />;
-        return result;
-      })}
-      
     </main>
     </>
   )
 }
 
-export default Navigation
+export default AllPokemon

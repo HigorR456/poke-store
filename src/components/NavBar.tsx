@@ -1,6 +1,7 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Cart from '../components/Cart';
 
 import { useSelector, useDispatch } from 'react-redux';
 import { searchedItem } from '../features/itemSlice';
@@ -30,7 +31,8 @@ const NavBar = () => {
     }, [searchInput])
 
     const handleDispatch = () => {
-        dispatch(searchedItem(searchResult))
+        dispatch(searchedItem(searchResult));
+        setSearchResult(null);
     }
 
     return (
@@ -42,10 +44,11 @@ const NavBar = () => {
                     <Link href='/Navigation' className='navLink' ><button>Pokemon List</button></Link>
                     <Link href='/About' className='navLink' ><button>About</button></Link>
                     <Link href='/Contact' className='navLink' ><button>Contact</button></Link>
+                    <Cart />
                 </div>
 
                 <div className='searchBar'>
-                    <input type='text' placeholder='Search pokemon' onChange={(e) => e.target.value.length !== 0 ? setSearchInput(e.target.value) : setSearchInput(null)} />
+                    <input className='inputBar' type='text' placeholder='Search pokemon' onChange={(e) => e.target.value.length !== 0 ? setSearchInput(e.target.value) : setSearchInput(null)} />
                 </div>
 
                 {searchResult === null ? 

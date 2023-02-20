@@ -78,7 +78,7 @@ export default function Home() {
         <main className='homeMain'>
           <div className='boxWrapper'>
 
-            <Link href='/Navigation' className='boxLink'><div className='box' id='boxOne'>
+            <Link href='/AllPokemon' className='boxLink'><div className='box' id='boxOne'>
               <p>See All Pokemon</p>
               <img src={boxSprite.sprites.other['official-artwork'].front_default}></img>
             </div></Link>

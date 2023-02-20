@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useSelector, useDispatch } from 'react-redux';
 import { assignArr, increment, decrement, reset } from '../features/cartSlice';
 
-const Pokemon = ({ obj }: any) => {
+const PokemonList = ({ obj }: any) => {
     
     obj = obj.name;
   
@@ -88,8 +88,8 @@ const Pokemon = ({ obj }: any) => {
   
             <div className='typeList' >
               <p>type:&nbsp;</p>
-              <p className={info.types[0].type.name}>{info.types[0].type.name}</p>
-              <p className={((info.types.length) >= 2 ? (info.types[1].type.name) : null)}>{((info.types.length) >= 2 ? (info.types[1].type.name) : null)}</p>
+              <p id={info.types[0].type.name}>{info.types[0].type.name}</p>
+              <p id={((info.types.length) >= 2 ? (info.types[1].type.name) : null)}>{((info.types.length) >= 2 ? (info.types[1].type.name) : null)}</p>
             </div>
   
             <div className='typeList'>
@@ -131,9 +131,8 @@ const Pokemon = ({ obj }: any) => {
               <p className='name' onClick={handlePokeName} >{info.name}</p>
               <p className='experience'>{info.base_experience}&nbsp;</p>
               <span className='type'>
-                <p className={info.types[0].type.name}>{info.types[0].type.name}</p>
-                <p className={((info.types.length) >= 2 ? (info.types[1].type.name) : null)}>{((info.types.length) >= 2 ? (info.types[1].type.name) : null)}</p>
-                <p className={((info.types.length) >= 3 ? (info.types[2].type.name) : null)}>{((info.types.length) >= 3 ? (info.types[2].type.name) : null)}</p>
+                <p id={info.types[0].type.name}>{info.types[0].type.name}</p>
+                <p id={((info.types.length) >= 2 ? (info.types[1].type.name) : null)}>{((info.types.length) >= 2 ? (info.types[1].type.name) : null)}</p>
               </span>
               <p className='price'>${((info.base_experience / 20) + 20).toFixed(2)}</p>
               
@@ -144,4 +143,4 @@ const Pokemon = ({ obj }: any) => {
       }
   }
 
-export default Pokemon;
+export default PokemonList;

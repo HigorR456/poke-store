@@ -53,8 +53,6 @@ const MyCart = () => {
 
             <main>
 
-                <Cart />
-
                 <h2>My Cart</h2>
 
                 <table className='cartTableWrap'>
@@ -109,11 +107,14 @@ const MyCart = () => {
 
                     <tfoot>
                         <tr>
-                            <div className='listContent' id='cartListHeader'>
-                                <div className='cartContentTotal'>
-                                    <p>Total: {total.toFixed(2)}</p>
+                            <td>
+                                <div className='listContent' id='cartListHeader'>
+                                    <div className='cartContentTotal'>
+                                        <p>Total: {total.toFixed(2)}</p>
+                                    </div>
                                 </div>
-                            </div>
+                            </td>
+                            
                         </tr>
                     </tfoot>
                 </table>

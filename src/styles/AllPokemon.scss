@@ -1,0 +1,53 @@
+.allPokemon {
+    display: flex;
+    flex-wrap: wrap;
+
+    //pokemon Box
+    .pokeBoxWrapper {
+        min-width: 200px;
+        max-width: 200px;
+        height: 300px;
+        color: black;
+        border-radius: 5px;
+        background: white;
+        margin: 1rem;
+        flex: 200px;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+
+        img {
+            width: 200px;
+            position: absolute;
+            margin-bottom: 100px;
+        }
+
+        .pokeBoxColor {
+            height: 130px;
+            width: 200px;
+            position: absolute;
+            border-bottom: 40px solid black;
+        }
+
+        .pokeBoxName {
+            font-size: 20px;
+            font-weight: bold;
+            margin-top: 150px;
+            margin-left: 10px;
+            position: absolute;
+            color: white;
+        }
+
+        .pokeBoxPrice {
+            font-size: 50px;
+            font-weight: bold;
+            position: absolute;
+            margin-top: 280px;
+            margin-left: 10px;
+            
+            &::first-letter {
+                font-size: 30px;
+            }
+        }
+    }
+}

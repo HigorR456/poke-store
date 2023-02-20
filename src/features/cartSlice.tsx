@@ -12,14 +12,15 @@ export const cartSlice = createSlice({
             } else {
                 let i = 0;
                 (state.map((e:any) => {
+                    console.log(e)
                     if (e.name === action.payload.name) {
-                        e.quantity++;
+                        e.quantity += action.payload.quantity;
                         i++;
                     } else {
                         return i
                     }
                 }));
-                (i === 0 ? state.push(action.payload) : console.log('no'))
+                (i === 0 ? state.push(action.payload) : console.log('quantity changed'))
             }
         },
         increment: (state, action) => {
