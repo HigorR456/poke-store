@@ -4,35 +4,38 @@
 
     //pokemon Box
     .pokeBoxWrapper {
-        min-width: 200px;
-        max-width: 200px;
-        height: 300px;
-        color: black;
+        min-width: 280px;
+        max-width: 280px;
+        height: 380px;
+        color: white;
         border-radius: 5px;
-        background: white;
+        background: rgb(50, 50, 50);
         margin: 1rem;
-        flex: 200px;
+        flex: 280px;
         display: flex;
         flex-wrap: wrap;
         align-items: center;
 
         img {
-            width: 200px;
+            width: 280px;
             position: absolute;
             margin-bottom: 100px;
+            border-bottom: 1px solid rgb(80, 80, 80);
         }
 
         .pokeBoxColor {
-            height: 130px;
-            width: 200px;
+            height: 180px;
+            width: 230px;
+            border-radius: 130px;
             position: absolute;
-            border-bottom: 40px solid black;
+            margin-left: 25px;
+            margin-bottom: 60px;
         }
 
         .pokeBoxName {
             font-size: 20px;
             font-weight: bold;
-            margin-top: 150px;
+            margin-top: 240px;
             margin-left: 10px;
             position: absolute;
             color: white;
@@ -42,7 +45,7 @@
             font-size: 50px;
             font-weight: bold;
             position: absolute;
-            margin-top: 280px;
+            margin-top: 360px;
             margin-left: 10px;
             
             &::first-letter {

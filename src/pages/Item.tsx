@@ -3,8 +3,12 @@ import Title from '../components/Title';
 import NavBar from '../components/NavBar';
 import Cart from '../components/Cart';
 
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
+
 import { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import Router from 'next/router';
 import { searchedItem } from '../features/itemSlice';
 import { assignArr } from '../features/cartSlice';
 
@@ -13,26 +17,44 @@ const Item = () => {
     const dispatch = useDispatch();
     const searchedOne =  useSelector((state: any) => state.item[0]);
 
+    const [image, setImage]: any = useState(searchedOne.sprites.other['official-artwork'].front_default)
+
     const [qty, setQty]: any = useState(1);
-    let searchedItem: any = [{...searchedOne}];
+    let searched: any = [{...searchedOne}];
+
+    const handleImageLeft = () => {
+        console.log('left-btn')
+    }
+
+    const handleImageRight = () => {
+        console.log('right btn')
+    }
 
     const handleAddToCart = () => {
-        if (searchedItem.quantity != undefined) {
-          dispatch(assignArr(searchedItem[0]));
+        if (searched[0].quantity != undefined) {
+          dispatch(assignArr(searched[0]));
         } else {
-          (Object.assign(searchedItem[0], {quantity: qty}));
-          dispatch(assignArr(searchedItem[0]));
+          (Object.assign(searched[0], {quantity: qty}));
+          dispatch(assignArr(searched[0]));
         }
+      }
+
+      const handleBuyNow = () => {
+        if (searched[0].quantity != undefined) {
+            dispatch(assignArr(searched[0]));
+          } else {
+            (Object.assign(searched[0], {quantity: qty}));
+            dispatch(assignArr(searched[0]));
+          };
+          Router.push('/MyCart');
       }
 
       const handleAdd = () => {
         setQty(qty + 1);
-        searchedItem.quantity = qty;
       }
 
       const handleSub = () => {
         setQty(qty - 1);
-        searchedItem.quantity = qty;
       }
 
     return (
@@ -42,14 +64,20 @@ const Item = () => {
             <nav><NavBar /></nav>
             
             <div className='itemWrapper'>
-
+            
                 <section className='firstSection'>
                     <div className='itemImage'>
-                        <img src={searchedOne.sprites.other['official-artwork'].front_default}></img>
+                        <button className='itemImgBtn' onClick={handleImageLeft}>
+                            <FontAwesomeIcon icon={faChevronLeft} />
+                        </button>
+                        <img src={image}></img>
+                        <button className='itemImgBtn' onClick={handleImageRight}>
+                            <FontAwesomeIcon icon={faChevronRight} />
+                        </button>
                     </div>
 
                     <div className='itemBuy'>
-                        <div>
+                        <div className='itemBuyWrap'>
                             <div className='itemBuyText'>
                                 <p className='itemBuyName'>{searchedOne.name}</p>
                                 <p className='itemBuyPrice'>${((searchedOne.base_experience / 20) + 20).toFixed(2)}</p>
@@ -67,7 +95,7 @@ const Item = () => {
 
                             <div className='itemBuyButtons'>
                                 <button onClick={handleAddToCart}>Add to cart</button>
-                                <button>Buy now</button>
+                                <button onClick={handleBuyNow}>Buy now</button>
                             </div>
                         </div>
                         

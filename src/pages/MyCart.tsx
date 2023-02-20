@@ -66,9 +66,10 @@ const MyCart = () => {
                     </thead>
 
                     <tbody className='cartBodyWrap'>
+
                     {cartInfo.map((item: any) => {
                         const result = 
-                        <tr className='cartContentRow'>
+                        <tr key={item.name} className='cartContentRow'>
                                 <td className='cartContentProduct'>
                                     <img src={item.sprites.front_default}></img>
                                     <div>
@@ -99,7 +100,6 @@ const MyCart = () => {
                                     <button className='deleteItem' onClick={handleDel} key={item.name}>X</button>
                                 </td>
                         </tr>
-
 
                         return result;
                     })}

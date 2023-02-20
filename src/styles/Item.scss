@@ -1,7 +1,8 @@
 .itemWrapper {
     margin: 1rem auto;
     max-width: 1080px;
-    border-inline: 1px solid rgb(50, 50, 50);
+    background: rgb(50, 50, 50);
+    border-inline: 1px solid rgb(80, 80, 80);
     
 
     .firstSection {
@@ -11,58 +12,110 @@
 
         .itemImage {
             width: 50%;
+            display: flex;
     
             img {
-                width: 100%;
+                width: 80%;
+            }
+
+            .itemImgBtn {
+                background: 0;
+                border: 0;
+
+                .fa-chevron-left, .fa-chevron-right {
+                    color: white;
+                    height: 30px;
+                }
+
+                &:hover {
+                    cursor: pointer;
+                }
             }
         }
     
         .itemBuy {
             width: 50%;
-            border-left: 1px solid rgb(50, 50, 50);
+            border-left: 1px solid rgb(80, 80, 80);
             display: flex;
             justify-content: center;
             align-items: center;
 
-            .itemBuyText {
-                line-height: 1px;
-
-                .itemBuyName {
-                    font-size: 30px;
-                }
-
-                .itemBuyPrice {
-                    font-size: 60px;
-                    font-weight: bold;
-                }
-            }
-
-            .itemQtyWrap {
-                display: flex;
+            .itemBuyWrap {
+                height: 80%;
+                width: 80%;
+                display: grid;
+                justify-content: center;
+                background: #242424;
+                border-radius: 5px;
                 
-                .itemQty {
-                    display: inline-flex;
-                    justify-content:space-between;
-                    align-items: center;
-                    background: rgb(220, 220, 220);
-                    color: black;
-                    width: 66px;
-                    height: 22px;
-                    border-radius: 22px;
-
-                    &:hover {
-                        background: rgb(255, 255, 255);
+                .itemBuyText {
+                    line-height: 1px;
+    
+                    .itemBuyName {
+                        font-size: 30px;
                     }
     
-                    .itemQtyBtn {
-                        border: 0;
-                        background: 0;
-                        width: 23px;
+                    .itemBuyPrice {
+                        font-size: 50px;
+                        font-weight: bold;
+                        
+                        &::first-letter {
+                            font-size: 30px;
+                        }
+                    }
+                }
+    
+                .itemQtyWrap {
+                    display: flex;
+                    
+                    .itemQty {
+                        display: inline-flex;
+                        justify-content:space-between;
+                        align-items: center;
+                        background: rgb(220, 220, 220);
+                        color: black;
+                        width: 66px;
                         height: 22px;
-                        border-radius: 23px;
+                        border-radius: 22px;
     
                         &:hover {
+                            background: rgb(255, 255, 255);
+                        }
+        
+                        .itemQtyBtn {
+                            border: 0;
+                            background: 0;
+                            width: 23px;
+                            height: 22px;
+                            border-radius: 23px;
+        
+                            &:hover {
+                                cursor: pointer;
+                            }
+        
+                            &:active {
+                                background: rgb(100, 100, 100);
+                                color: white;
+                            }
+                        }
+                    }
+                }
+                
+                .itemBuyButtons {
+                    button {
+                        font-size: 25px;
+                        margin-top: 2px;
+                        display: block;
+                        width: 300px;
+                        height: 60px;
+                        border-radius: 5px;
+                        background: rgb(220, 220, 220);
+                        color: black;
+                        border: 0;
+                        
+                        &:hover {
                             cursor: pointer;
+                            background: rgb(255, 255, 255);
                         }
     
                         &:active {
@@ -72,29 +125,8 @@
                     }
                 }
             }
-            
-            .itemBuyButtons {
-                button {
-                    margin-top: 2px;
-                    display: block;
-                    width: 300px;
-                    height: 60px;
-                    border-radius: 5px;
-                    background: rgb(220, 220, 220);
-                    color: black;
-                    border: 0;
-                    
-                    &:hover {
-                        cursor: pointer;
-                        background: rgb(255, 255, 255);
-                    }
 
-                    &:active {
-                        background: rgb(100, 100, 100);
-                        color: white;
-                    }
-                }
-            }
+            
         }
     }
     
@@ -116,6 +148,9 @@
 
         .itemDescAbilities {
             display: flex;
+            p {
+                margin-right: 4px;
+            }
         }
 
         .itemDescStats {
@@ -123,12 +158,10 @@
 
             .itemDescStatsTable {
                 .itemDescStatsHead {
-                    
-                    border-bottom: 1px solid rgb(50, 50, 50);
                     height: 40px;
 
                     th {
-                        border-right: 1px solid rgb(50, 50, 50);
+                        border-right: 1px solid rgb(80, 80, 80);
 
                         &:last-child {
                             border: 0;
@@ -141,7 +174,7 @@
                     td {
                         width:10%;
                         text-align: center;
-                        border-right: 1px solid rgb(50, 50, 50);
+                        border-right: 1px solid rgb(80, 80, 80);
 
                         &:last-child {
                             border: 0;
