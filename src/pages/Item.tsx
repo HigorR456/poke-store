@@ -6,7 +6,7 @@ import Cart from '../components/Cart';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import Router from 'next/router';
 import { searchedItem } from '../features/itemSlice';
@@ -17,10 +17,15 @@ const Item = () => {
     const dispatch = useDispatch();
     const searchedOne =  useSelector((state: any) => state.item[0]);
 
-    const [image, setImage]: any = useState(searchedOne.sprites.other['official-artwork'].front_default)
-
+    const [image, setImage]: any = useState(searchedOne.sprites.other['official-artwork'].front_default);
     const [qty, setQty]: any = useState(1);
+
     let searched: any = [{...searchedOne}];
+
+    useEffect(() => {
+        setImage(searchedOne.sprites.other['official-artwork'].front_default);
+        setQty(1);
+    }, [searchedOne]);
 
     const handleImageLeft = () => {
         console.log('left-btn')

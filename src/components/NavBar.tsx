@@ -33,6 +33,7 @@ const NavBar = () => {
     const handleDispatch = () => {
         dispatch(searchedItem(searchResult));
         setSearchResult(null);
+        setSearchInput(null);
     }
 
     return (
@@ -48,7 +49,7 @@ const NavBar = () => {
                 </div>
 
                 <div className='searchBar'>
-                    <input className='inputBar' type='text' placeholder='Search pokemon' onChange={(e) => e.target.value.length !== 0 ? setSearchInput(e.target.value) : setSearchInput(null)} />
+                    <input className='inputBar' type='text' placeholder='Search pokemon' spellCheck='false' value={searchInput === null ? '' : searchInput} onChange={(e) => e.target.value.length !== 0 ? setSearchInput(e.target.value) : setSearchInput(null)} />
                 </div>
 
                 {searchResult === null ? 

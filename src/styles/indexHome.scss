@@ -1,6 +1,59 @@
 .homeMain {
     margin: 1rem auto;
     width: 100%;
+    padding: 0;
+    overflow: hidden;
+
+    .slideBoxWrap {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 300%;
+        height: 200px;
+        background: rgb(100, 100, 100);
+
+        animation: slideTransition 6s infinite;
+
+        .slideBox {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 200px;
+
+            img {
+                height: 200px;
+            }
+
+            .slideBoxText {
+                display: flex;
+                flex-wrap: wrap;
+
+                p {
+                    margin: 0;
+                    width: 100%;
+                    font-size: 35px;
+                    height: 35px;
+                }
+    
+                .slideBoxPokeType {
+                    font-size: 115px;
+                    height: 115px;
+                }
+            }
+        }
+    }
+
+    @keyframes slideTransition {
+        0% {margin-left: 0%;}
+        27% {margin-left: 0%;}
+        33% {margin-left: -100%;}
+        59% {margin-left: -100%;}
+        65% {margin-left: -200%;}
+        94% {margin-left: -200%;}
+    }
+
+
 
     .boxWrapper {
         display: flex;
