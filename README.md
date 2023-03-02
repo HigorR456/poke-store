@@ -9,31 +9,33 @@ This project is made with React JS, Next.js and Redux. The style has being made 
 Below you can see the progress and what functionalities are working:
 
 ## Home-Page
-All navbar features are working unless the Search Input, both 'Pokemon List' and 'See All Pokemon' lead to the same path.
+This is the home-page. You can see all pokemon by clicking in "See All Pokemon" box.
 
-![image](https://user-images.githubusercontent.com/109878939/218279101-c2f9ace6-8094-4d2b-bc77-a2a2ebc53c0a.png)
+![image](https://user-images.githubusercontent.com/109878939/222441638-c240e3e0-f114-4ef6-bfcd-d98513b2995d.png)
 
 ## Navigation-Page
-This page shows all the pokemons, you can navigate between pages through the navigation buttons.
+This page shows all the pokemons, you can navigate between pages through the navigation buttons and toggle between 10 or 20 pokemon shown.
+When clicking in any pokemon shown, you go to the Item-Page, which shows you the pokemon details and buy option.
 
-When you click any pokemon name, its details are shown.
+![image](https://user-images.githubusercontent.com/109878939/222442099-583e6ebc-bd56-4f40-896d-635b395fb50a.png)
+![image](https://user-images.githubusercontent.com/109878939/222442201-f3adee6a-e7f7-4573-81d4-11b57a7926d3.png)
 
-![image](https://user-images.githubusercontent.com/109878939/218279166-84342353-ce07-430e-9576-c4b3edc08923.png)
-![image](https://user-images.githubusercontent.com/109878939/218279700-a9922c1d-b0c0-44ef-b81b-69a75439ae38.png)
+## Item-Page
+You can see the pokemon clicked details here. Select the quantity you want, add to your cart or buy now which add to cart and leads you to the my-cart page.
 
-## Navigation-Page details
-You can add the pokemon to your cart, see its artwork and see its artwork or toggle the sprite between front and back.
-
-When you add any pokemon to your cart the cart icon starts counting.
-
-![image](https://user-images.githubusercontent.com/109878939/218279373-e054e1e1-b4f0-4307-b0c1-884cdd72e664.png)
-![image](https://user-images.githubusercontent.com/109878939/218279395-8a38ecc1-1a2b-48bd-9e74-d7fa683c3549.png)
+![image](https://user-images.githubusercontent.com/109878939/222442806-0d263eb8-ca9a-4bc0-9cf5-7c3495c496d1.png)
 
 ## MyCart-Page
 In this page all pokemon added to cart are shown, you can change quantity and remove any pokemon you want.
 
 ![image](https://user-images.githubusercontent.com/109878939/218279446-88a91372-8325-4358-921f-363410990582.png)
 ![image](https://user-images.githubusercontent.com/109878939/218279549-7081e3ee-0d10-40f3-ae25-1a990709f71a.png)
+
+## Search-Bar
+You can also search the Pokemon you want by name as shown below, when clicking in it you will be lead to the Item-Page.
+
+![image](https://user-images.githubusercontent.com/109878939/222443194-72de7750-d136-4d1a-8dc8-f49b1fd43082.png)
+![image](https://user-images.githubusercontent.com/109878939/222443252-e5007693-94b1-4f82-98ae-bd6f5cb4c3e8.png)
 
 _______________________________________________________________________________________________________________
 
