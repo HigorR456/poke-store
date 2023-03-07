@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-const initialState: any = []
+const initialState: any = [{base_experience: 0}]
 
 export const itemSlice = createSlice({
     name: 'item',

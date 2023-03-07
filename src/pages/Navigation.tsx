@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import PokemonList from './PokemonList'
+import PokemonList from '../components/PokemonList'
 import Title from '../components/Title'
 import NavBar from '../components/NavBar'
 

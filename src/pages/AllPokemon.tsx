@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import PokemonBox from './PokemonBox'
+import PokemonBox from '../components/PokemonBox'
 import Title from '../components/Title'
 import NavBar from '../components/NavBar'
 

@@ -3,10 +3,7 @@ const nextConfig = {
   reactStrictMode: false,
   devIndicators: {
         buildActivity: false,
-    },
-  experimental: {
-    appDir: true,
-  },
+    }
 }
 
 module.exports = nextConfig

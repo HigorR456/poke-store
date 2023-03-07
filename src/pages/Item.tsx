@@ -1,7 +1,6 @@
 import React from 'react';
 import Title from '../components/Title';
 import NavBar from '../components/NavBar';
-import Cart from '../components/Cart';
 
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
@@ -9,7 +8,6 @@ import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons
 import { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import Router from 'next/router';
-import { searchedItem } from '../features/itemSlice';
 import { assignArr } from '../features/cartSlice';
 
 const Item = () => {
@@ -17,14 +15,18 @@ const Item = () => {
     const dispatch = useDispatch();
     const searchedOne =  useSelector((state: any) => state.item[0]);
 
-    const [image, setImage]: any = useState(searchedOne.sprites.other['official-artwork'].front_default);
+    const [image, setImage]: any = useState(null);
     const [qty, setQty]: any = useState(1);
 
     let searched: any = [{...searchedOne}];
 
+    console.log(searchedOne)
+
     useEffect(() => {
-        setImage(searchedOne.sprites.other['official-artwork'].front_default);
-        setQty(1);
+        if (searchedOne.base_experience !== 0) {
+            setImage(searchedOne.sprites.other['official-artwork'].front_default);
+            setQty(1);
+        }
     }, [searchedOne]);
 
     const handleImageLeft = () => {
@@ -62,7 +64,13 @@ const Item = () => {
         setQty(qty - 1);
       }
 
-    return (
+    if (searchedOne.base_experience === 0) {
+        return (
+            <>
+            </>
+        )
+    } else {
+        return (
         <>
             <header><Title /></header>
 
@@ -158,7 +166,8 @@ const Item = () => {
             </div>
         
         </>
-    );
+        );
+    };
 };
 
 export default Item;

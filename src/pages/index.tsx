@@ -1,10 +1,9 @@
 import Head from 'next/head';
-import styles from '@/styles/Home.module.css';
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Title from '../components/Title';
 import NavBar from '../components/NavBar';
-import SlideHome from './SlideHome';
+import SlideHome from '../components/SlideHome';
 
 
 export default function Home() {
