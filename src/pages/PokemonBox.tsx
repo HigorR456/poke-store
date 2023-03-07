@@ -1,8 +1,7 @@
 import { useState, useEffect } from 'react';
 import Link from "next/link";
 
-import { useSelector, useDispatch } from 'react-redux';
-import { assignArr, increment, decrement, reset } from '../features/cartSlice';
+import { useDispatch } from 'react-redux';
 
 import { searchedItem } from '../features/itemSlice'
 
@@ -37,7 +36,7 @@ const PokemonBox = ({ obj }: any) => {
           <Link href='/Item'>
               <div className='pokeBoxWrapper' onClick={handleItemDetails}>
               <div className='pokeBoxColor' id={info.types[0].type.name}></div>
-              <img src={info.sprites.other['official-artwork'].front_default}></img>
+              <img src={info.sprites.other['official-artwork'].front_default} alt='pokemon sprite'></img>
               <p className='pokeBoxName'>{info.name}</p>
               <p className='pokeBoxPrice'>${((info.base_experience / 20) + 20).toFixed(2)}</p>
                 

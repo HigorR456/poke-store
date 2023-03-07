@@ -35,7 +35,7 @@ const SlideHome = ({ slideProp }: any) => {
         return (
         <>
             <div className='slideBox' id={slideProp.name}>
-                <img src={slideInfo.sprites.other["official-artwork"].front_default}></img>
+                <img src={slideInfo.sprites.other["official-artwork"].front_default} alt='pokemon artwork'></img>
                 <div className='slideBoxText'>
                     <p>Pokemon Type:</p>
                     <p className='slideBoxPokeType'>{slideProp.name}</p>

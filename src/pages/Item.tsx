@@ -75,7 +75,7 @@ const Item = () => {
                         <button className='itemImgBtn' onClick={handleImageLeft}>
                             <FontAwesomeIcon icon={faChevronLeft} />
                         </button>
-                        <img src={image}></img>
+                        <img src={image} alt='pokemon image'></img>
                         <button className='itemImgBtn' onClick={handleImageRight}>
                             <FontAwesomeIcon icon={faChevronRight} />
                         </button>

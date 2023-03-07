@@ -2,10 +2,9 @@ import React from 'react';
 import { useState, useEffect } from 'react';
 import Title from '../components/Title';
 import NavBar from '../components/NavBar';
-import Cart from '../components/Cart';
 
 import { useSelector, useDispatch } from 'react-redux';
-import { assignArr, increment, decrement, removeArr, reset } from '../features/cartSlice';
+import { increment, decrement, removeArr } from '../features/cartSlice';
 
 const MyCart = () => {
 
@@ -71,7 +70,7 @@ const MyCart = () => {
                         const result = 
                         <tr key={item.name} className='cartContentRow'>
                                 <td className='cartContentProduct'>
-                                    <img src={item.sprites.front_default}></img>
+                                    <img src={item.sprites.front_default} alt='pokemon sprite'></img>
                                     <div>
                                         <div style={{fontWeight: 'bold'}}>{item.name}</div>
                                         <div>EXP&nbsp;{item.base_experience}</div>

@@ -4,9 +4,7 @@ import Link from 'next/link';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faCartShopping} from '@fortawesome/free-solid-svg-icons';
 
-import { useSelector, useDispatch } from 'react-redux';
-import { assignArr, increment, decrement, reset } from '../features/cartSlice';
-
+import { useSelector } from 'react-redux';
 
 const Cart = () => {
 

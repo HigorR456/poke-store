@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Cart from '../components/Cart';
 
-import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { searchedItem } from '../features/itemSlice';
 
 const NavBar = () => {
@@ -58,7 +58,7 @@ const NavBar = () => {
                     <Link href='/Item' onClick={handleDispatch}>
                         <div className='searchResult'>
                             <div className='searchBox'>
-                                <img src={searchResult.sprites.front_default}></img>
+                                <img src={searchResult.sprites.front_default} alt='pokemon sprite'></img>
                                 <p>{searchResult.name}</p>
                             </div>
                         </div>

@@ -1,8 +1,7 @@
 import { useState, useEffect } from 'react';
-import Link from "next/link";
 
-import { useSelector, useDispatch } from 'react-redux';
-import { assignArr, increment, decrement, reset } from '../features/cartSlice';
+import { useDispatch } from 'react-redux';
+import { assignArr } from '../features/cartSlice';
 
 const PokemonList = ({ obj }: any) => {
     
@@ -74,7 +73,7 @@ const PokemonList = ({ obj }: any) => {
         //details
         <div className='detailsWrapper'>
           
-          <img className='artwork' style={infoWrapper} src={info.sprites.other['official-artwork'].front_default}></img>
+          <img className='artwork' style={infoWrapper} src={info.sprites.other['official-artwork'].front_default} alt='pokemon artwork'></img>
           <button className='backToInfoBtn' hidden={goBackToInfo} onClick={handleGoBackToInfo}>Return</button>
   
           <div className='infoWrapper' style={seeArtwork}>
@@ -109,7 +108,7 @@ const PokemonList = ({ obj }: any) => {
               <p className='types'>{info.stats[5].stat.name}: {info.stats[5].base_stat}</p>
             </div>
   
-            <img className='sprite' src={info.sprites[spriteView]}></img>
+            <img className='sprite' src={info.sprites[spriteView]} alt='pokemon sprite'></img>
             
             <button className='viewBtn' onClick={handleView}>Change view</button>
             <button className='artBtn' onClick={handleArtwork} >See artwork</button>
@@ -127,7 +126,7 @@ const PokemonList = ({ obj }: any) => {
           <div className='listWrapper'>
             <div className='divWrapper'>
               <p className='index'>{info.id}</p>
-              <span><img className='image' src={info.sprites.front_default}></img></span>
+              <span><img className='image' src={info.sprites.front_default} alt='pokemon sprite'></img></span>
               <p className='name' onClick={handlePokeName} >{info.name}</p>
               <p className='experience'>{info.base_experience}&nbsp;</p>
               <span className='type'>
