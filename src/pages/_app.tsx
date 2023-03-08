@@ -1,16 +1,16 @@
 import '@/styles/globals.css';
 import type { AppProps } from 'next/app';
 
-import '../styles/Navigation.scss';
-import '../styles/Pokemon.scss';
-import '../styles/Cart.scss';
-import '../styles/Title.scss';
-import '../styles/NavBar.scss';
-import '../styles/MyCart.scss';
+import '../styles/navigation.scss';
+import '../styles/pokemon.scss';
+import '../styles/cart.scss';
+import '../styles/title.scss';
+import '../styles/navBar.scss';
+import '../styles/myCart.scss';
 import '../styles/indexHome.scss';
 import '../styles/type.scss';
-import '../styles/Item.scss';
-import '../styles/AllPokemon.scss';
+import '../styles/item.scss';
+import '../styles/allPokemon.scss';
 
 import { store } from '../app/store';
 import { Provider } from 'react-redux';
