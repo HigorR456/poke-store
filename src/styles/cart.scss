@@ -4,8 +4,8 @@
     height: 52px;
     
     &:hover {
-        background: rgb(140, 140, 140);
-        background: linear-gradient(180deg, rgb(140, 140, 140) 0%, rgb(70, 70, 70) 100%);
+        background: rgb(230, 230, 230);
+        background: linear-gradient(180deg, rgb(230, 230, 230) 0%, rgb(190, 190, 190) 100%);
         width: 60px;
         margin: 4px;
         height: 52px;
@@ -14,14 +14,14 @@
     }
     
     &:active {
-        background: rgb(105, 105 ,105);
+        background: rgb(200, 200 ,200);
     }
 
     .fa-cart-shopping {
         margin-top: 18%;
         margin-inline: 10px;
         height: 30px;
-        color: white;
+        color: black;
     }
 
     .cartLink {
@@ -35,7 +35,8 @@
         position: relative;
         top: -45px;
         left: 30px;
-        background: rgb(50, 50, 50);
+        background: white;
+        border: 1px solid rgb(200, 200, 200);
         justify-content: center;
         align-items: center;
         display: flex;
@@ -44,7 +45,7 @@
         .itemQty {
             font-size: 16px;
             font-weight: bold;
-            color: white;
+            color: black;
         }
     }
 

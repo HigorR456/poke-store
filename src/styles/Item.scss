@@ -1,8 +1,8 @@
 .itemWrapper {
     margin: 1rem auto;
     max-width: 1080px;
-    background: rgb(50, 50, 50);
-    border-inline: 1px solid rgb(80, 80, 80);
+    background: rgb(240, 240, 240);
+    border-inline: 1px solid rgb(200, 200, 200);
     overflow: hidden;
     
 
@@ -24,7 +24,7 @@
                 border: 0;
 
                 .fa-chevron-left, .fa-chevron-right {
-                    color: white;
+                    color: black;
                     height: 30px;
                 }
 
@@ -36,7 +36,7 @@
     
         .itemBuy {
             width: 50%;
-            border-left: 1px solid rgb(80, 80, 80);
+            border-left: 1px solid rgb(200, 200, 200);
             display: flex;
             justify-content: center;
             align-items: center;
@@ -46,8 +46,9 @@
                 width: 80%;
                 display: grid;
                 justify-content: center;
-                background: #242424;
+                background: white;
                 border-radius: 5px;
+                padding: 10px;
                 
                 .itemBuyText {
                     line-height: 1px;
@@ -73,15 +74,11 @@
                         display: inline-flex;
                         justify-content:space-between;
                         align-items: center;
-                        background: rgb(220, 220, 220);
+                        background: rgb(240, 240, 240);
                         color: black;
                         width: 66px;
                         height: 22px;
                         border-radius: 22px;
-    
-                        &:hover {
-                            background: rgb(255, 255, 255);
-                        }
         
                         .itemQtyBtn {
                             border: 0;
@@ -107,16 +104,15 @@
                         font-size: 25px;
                         margin-top: 2px;
                         display: block;
-                        width: 300px;
-                        height: 60px;
+                        width: 280px;
+                        height: 55px;
                         border-radius: 5px;
-                        background: rgb(220, 220, 220);
+                        background: rgb(240, 240, 240);
                         color: black;
                         border: 0;
                         
                         &:hover {
                             cursor: pointer;
-                            background: rgb(255, 255, 255);
                         }
     
                         &:active {
@@ -162,7 +158,7 @@
                     height: 40px;
 
                     th {
-                        border-right: 1px solid rgb(80, 80, 80);
+                        border-right: 1px solid rgb(200, 200, 200);
 
                         &:last-child {
                             border: 0;
@@ -175,7 +171,7 @@
                     td {
                         width:10%;
                         text-align: center;
-                        border-right: 1px solid rgb(80, 80, 80);
+                        border-right: 1px solid rgb(200, 200, 200);
 
                         &:last-child {
                             border: 0;

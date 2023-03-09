@@ -11,8 +11,9 @@ const Contact = () => {
 
              <h2>Contact Page</h2>
             
-            <a style={{textDecoration: 'none', color: 'cyan', display: 'block'}} href='https://github.com/HigorR456'>GitHub</a>
-            <a style={{textDecoration: 'none', color: 'cyan', display: 'block'}}href='https://codepen.io/Higor456/'>Codepen</a>
+            <a style={{textDecoration: 'none', color: 'black', display: 'block'}} href='https://github.com/HigorR456'>GitHub</a>
+            <a style={{textDecoration: 'none', color: 'black', display: 'block'}}href='https://codepen.io/Higor456/'>Codepen</a>
+            <a style={{textDecoration: 'none', color: 'black', display: 'block'}}href='https://www.linkedin.com/in/higor456dev/'>Linkedin</a>
         
         </>
     );

@@ -13,18 +13,18 @@ main {
         font-size: 14px;
         height: 40px;
         border: 0px;
-        background: rgb(185, 185, 185);
-        background: linear-gradient(180deg, rgb(185, 185, 185) 0%, rgb(105, 105, 105) 100%);
-        color: white;
+        background: rgb(240, 240, 240);
+        background: linear-gradient(180deg, rgb(240, 240, 240) 0%, rgb(200, 200, 200) 100%);
+        color: black;
   
         &:hover {
-          background: rgb(175, 175, 175);
+          background: rgb(230, 230, 230);
+          background: linear-gradient(180deg, rgb(230, 230, 230) 0%, rgb(190, 190, 190) 100%);
+          cursor: pointer;
         }
     
         &:active {
-          background: rgb(185, 185, 185);
-          background: linear-gradient(180deg, rgb(185, 185, 185) 0%, rgb(105, 105, 105) 100%);
-          color: white;
+          background: rgb(200, 200, 200);
         }
       }
     }
@@ -34,18 +34,18 @@ main {
         font-size: 14px;
         height: 40px;
         border: 0px;
-        background: rgb(185, 185, 185);
-        background: linear-gradient(180deg, rgb(185, 185, 185) 0%, rgb(105, 105, 105) 100%);
-        color: white;
+        background: rgb(240, 240, 240);
+        background: linear-gradient(180deg, rgb(240, 240, 240) 0%, rgb(200, 200, 200) 100%);
+        color: black;
       
         &:hover {
-          background: rgb(175, 175, 175);
+          background: rgb(230, 230, 230);
+          background: linear-gradient(180deg, rgb(230, 230, 230) 0%, rgb(190, 190, 190) 100%);
+          cursor: pointer;
         }
   
         &:active {
-          background: rgb(185, 185, 185);
-          background: linear-gradient(180deg, rgb(185, 185, 185) 0%, rgb(105, 105, 105) 100%);
-          color: white;
+          background: rgb(200, 200 ,200);
         }
       }
   
@@ -54,9 +54,9 @@ main {
         font-size: 14px;
         width: 40px;
         height: 40px;
-        background: rgb(185, 185, 185);
-        background: linear-gradient(0deg, rgb(105, 105, 105) 35%, rgb(185, 185, 185) 100%);
-        color: white;
+        background: rgb(190, 190, 190);
+        background: linear-gradient(0deg, rgb(230, 230, 230) 35%, rgb(190, 190, 190) 100%);
+        color: black;
         border: 0px;
       }
       
@@ -66,17 +66,17 @@ main {
         height: 40px;
         text-align: center;
         border: 0px;
-        background: rgb(250, 250, 250);
-        background: linear-gradient(180deg, rgb(250, 250, 250) 0%, rgb(200, 200, 200) 100%);
+        background: rgb(240, 240, 240);
+        background: linear-gradient(180deg, rgb(240, 240, 240) 0%, rgb(200, 200, 200) 100%);
   
         &:hover {
-          background: rgb(205, 205, 205);
-          border: 0px;
+          background: rgb(230, 230, 230);
+          background: linear-gradient(180deg, rgb(230, 230, 230) 0%, rgb(190, 190, 190) 100%);
+          cursor: pointer;
         }
   
         &:active {
-          background: rgb(250, 250, 250);
-          background: linear-gradient(180deg, rgb(250, 250, 250) 0%, rgb(200, 200, 200) 100%);
+          background: rgb(200, 200 ,200);
         }
       }
     }
@@ -91,7 +91,7 @@ main {
   &:hover {
     p {
       font-size: 16px;
-      color: white;
+      color: black;
     }
 
     .image {
