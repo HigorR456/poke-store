@@ -8,7 +8,7 @@ import '@/styles/Title.scss';
 import '@/styles/NavBar.scss';
 import '@/styles/MyCart.scss';
 import '@/styles/indexHome.scss';
-import '@/styles/Type.scss';
+import '@/styles/type.scss';
 import '@/styles/Item.scss';
 import '@/styles/AllPokemon.scss';
 
